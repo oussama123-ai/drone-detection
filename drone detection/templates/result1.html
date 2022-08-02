@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Linear SVC</title>
+    <link rel="shortcut icon" href="images/Capture.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/infostyle.css">
+
+</head>
+
+<body>
+
+    <!-- Principal -->
+    <div class="principale" id="principale">
+        <img class="menu-background" src="../static/images/menu-background.svg" alt="Menu-background">
+        <img class="resume-background" src="../static/images/resum-background.svg" alt="resume-background">
+        <div class="container">
+            <div class="header">
+                <div class="lks"style="padding: 50px;">
+                    <img src="../static/images/acad.PNG" alt="principale image" style="height:90px;width: 40px;background-color: blueviolet;">
+                    <a href="{{ url_for('index') }}"class="active">Drone Detector</a>
+                </div>
+            </div>
+
+            <div class="principale-cont">
+                <div class="principale-cont-container">
+                    <div class="principale-cont-cont">
+                        <div class="principale-cont-cont-container">
+                            <h1>Drone Detection : </h1>
+                            <p>Modèles:</p>
+                            <p>
+                                  <button style="border-radius: 10px;background-color: blue;width: 300px;height: 40px ; margin-top: 10px;">
+                                    <form action="#" method="post" enctype="multipart/form-data">
+                                        <input type="file" id="upload" name="fichier" required="true"style="margin-top: 8px; margin-right: 10px;"><br>
+                                        <input type="submit" value="Prediction" style="margin-top: 8px; margin-right: 10px;color:blue;margin-top: 20px;width: 200px;height:30px;border-radius: 10px;  background-color: blue;background-color: black;">
+                                    </form>
+                                  </button>
+                                 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="principale-cont-image">
+                        <div class="principale-cont-image-container">
+                            <img src="../static/images/dron.png" alt="principale image" style="border-radius:20px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if fileupload  %}
+       <!-- Why Bootstrap -->
+       <div class="whybootstrap" id="why-Bootstrap">
+        <div class="heading">
+            <div class="heading-container">
+                <h1>Result</h1>
+                <p></p>
+                <div></div>
+            </div>
+        </div>
+        <div class="container">
+
+                <div class="item">
+                    <p></p>
+                    <p>
+                        
+                            <p style="font-size: 30px;color:rgb(84, 232, 220);margin-top: 30px;margin-left: 250px;"> Your Signal is : {{inf}}</p>
+            
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    {% endif %}
+
+
+    <!-- Footer -->
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="footer-container">
+
+                <div class="links">
+                    <a href="#principale" class="active">Home</a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="copy">
+            <p>&copy; Created by Fedi Znaydi</p>
+        </div>
+    </div>
+</body>
+
+</html>

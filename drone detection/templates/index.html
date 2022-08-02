@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Drone Detection</title>
+    <link rel="shortcut icon" href="images/Capture.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/infostyle.css">
+
+</head>
+
+<body>
+
+    <!-- Principal -->
+    <div class="principale" id="principale">
+        <img class="menu-background" src="../static/images/menu-background.svg" alt="Menu-background">
+        <img class="resume-background" src="../static/images/resum-background.svg" alt="resume-background">
+        <div class="container">
+            <div class="header">
+                <div class="lks"style="padding: 50px;">
+                    <img src="../static/images/acad.PNG" alt="principale image" style="height:90px;width: 40px;background-color: blueviolet;">
+                    <a href="#principale" class="active">Home</a>
+                </div>
+            </div>
+
+            <div class="principale-cont">
+                <div class="principale-cont-container">
+                    <div class="principale-cont-cont">
+                        <div class="principale-cont-cont-container">
+                            <h1>Drone Detection : </h1>
+                            <p>Modèles:</p>
+                            <p>
+                                <div class="col form-group">
+                                  <button style="border-radius: 20px;background-color: blue;width: 200px;height: 40px;margin-top: 10px;background-color: black;">
+                                    <form action = "/uploaded_ct" method = "post" enctype="multipart/form-data"style="width:100px;">   
+                                        <a class="btn btn-outline-primary" href="{{ url_for('result') }}">GNB Model</a> <br></form>
+                                  </button><br>
+                                  <button style="border-radius: 20px;background-color: blue;width: 200px;height: 40px;margin-top: 10px;background-color: black;">
+                                    <form action = "/uploaded_ct" method = "post" enctype="multipart/form-data"style="width:100px;"> 
+                                      <a class="btn btn-outline-primary" href="{{ url_for('result1') }}">Linear SVC </a> <br>
+                                    </form>
+                                    </button><br>
+                                    <button style="border-radius: 20px; background-color: blue;width: 200px;height: 40px;margin-top: 10px;background-color: black;">
+                                        <form action = "/uploaded_ct" method = "post" enctype="multipart/form-data"style="width:100px;">  
+                                            <a class="btn btn-outline-primary" href="{{ url_for('result2') }}">Kneighbors </a> <br>
+                                          </form>
+                                    </button><br>
+                                    
+                                  </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="principale-cont-image">
+                        <div class="principale-cont-image-container">
+                            <img src="../static/images/dron.png" alt="principale image" style="border-radius:20px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="footer-container">
+
+                <div class="links">
+                    <a href="#principale" class="active">Home</a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="copy">
+            <p>&copy; Created by Fedi Znaydi</p>
+        </div>
+    </div>
+</body>
+
+</html>

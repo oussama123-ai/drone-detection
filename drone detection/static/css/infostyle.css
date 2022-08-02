@@ -1,0 +1,112 @@
+ 
+/*part contact*/
+
+.contact {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.contact .contact-container {
+  display: flex;
+}
+
+.contact .contact-container .message-us {
+  
+  flex-basis: 100%;
+  padding: 10px;
+  background-color: #202a36;
+  border-radius: 10px;
+}
+
+.contact .contact-container .message-us form label {
+  display: block;
+  color: #e8e6e3;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.contact .contact-container .message-us form input, .contact .contact-container .message-us form textarea {
+  width: 90%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: none;
+  border: 2px solid #e8e6e3;
+  color: #e8e6e3;
+  padding: 20px;
+}
+
+.contact .contact-container .message-us form input:focus, .contact .contact-container .message-us form textarea:focus {
+  border: 1px solid #6c5ce7;
+}
+
+.contact .contact-container .message-us form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.contact .contact-container .message-us form button {
+  padding: 12px 25px;
+  border-radius: 5px;
+  border: none;
+  background-color: #6c5ce7;
+  color: #e8e6e3;
+  cursor: pointer;
+  float: right;
+}
+
+.contact .contact-info {
+  
+  flex-basis: 40%;
+  padding: 20px;
+}
+
+.contact  .contact-info h2 {
+  color:blueviolet;
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.contact  .contact-info p {
+  color:#6c5ce7;
+  font-size: 17px;
+  margin-bottom: 50px;
+}
+.contact  .contact-info ul {
+  color:darkslategrey;
+  display: block;
+  margin-bottom: 10px;
+}
+.contact  .contact-info span {
+  color:darkslategrey;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.contact-flex{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.contact-flex p:first-child{
+  flex: 0 0 40%;
+}
+.contact-flex p:last-child{
+  flex: 0 0 60%;
+}
+@media (max-width: 768px) {
+  .contact .contact-container {
+        flex-wrap: wrap;
+  }
+  .contact .contact-container .message-us {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+  .contact .contact-info {
+        flex-basis: 100%;
+  }
+}

@@ -1,0 +1,92 @@
+import csv
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+import pickle
+def gnb_model(path,filename):
+    data= pd.read_csv(path)
+    df = pd.DataFrame(data)
+    X=[]
+    R=list(df.iloc[:,0])
+    IM=list(df.iloc[:,1])
+    imean = sum(R)/len(R)
+    qmean = sum(IM)/len(IM)
+    X.append(imean)  
+    X.append(qmean)
+    istd = np.std(R)
+    qstd = np.std(IM)
+    X.append(istd)
+    X.append(qstd)
+    imad=np.mean(np.absolute(R - np.mean(R))) 
+    qmad=np.mean(np.absolute(IM - np.mean(IM)))
+    X.append(imad)
+    X.append(qmad)
+    sr = pd.Series(R)
+    sr1 = pd.Series(IM)
+    ikurt = sr.kurtosis() 
+    qkurt = sr.kurtosis()
+    X.append(ikurt)
+    X.append(qkurt)
+    X_new = np.asarray(X,dtype=float).reshape(1,8)  
+    with open(r'/home/oussama/Bureau/znaydi/drone detection/Models/GNB.pkl', 'rb') as open_file:
+    	gnb_model_loaded = pickle.load(open_file)
+    ynew = gnb_model_loaded.predict(X_new)
+    return ynew
+def Linear_Svc_model(path,filename):
+    data= pd.read_csv(path)
+    df = pd.DataFrame(data)
+    X=[]
+    R=list(df.iloc[:,0])
+    IM=list(df.iloc[:,1])
+    imean = sum(R)/len(R)
+    qmean = sum(IM)/len(IM)
+    X.append(imean)  
+    X.append(qmean)
+    istd = np.std(R)
+    qstd = np.std(IM)
+    X.append(istd)
+    X.append(qstd)
+    imad=np.mean(np.absolute(R - np.mean(R))) 
+    qmad=np.mean(np.absolute(IM - np.mean(IM)))
+    X.append(imad)
+    X.append(qmad)
+    sr = pd.Series(R)
+    sr1 = pd.Series(IM)
+    ikurt = sr.kurtosis() 
+    qkurt = sr.kurtosis()
+    X.append(ikurt)
+    X.append(qkurt)
+    X_new = np.asarray(X,dtype=float).reshape(1,8)  
+    with open(r'/home/oussama/Bureau/znaydi/drone detection/Models/SVC.pkl', 'rb') as open_file:
+    	Linear_Svc_loaded = pickle.load(open_file)
+    ynew = Linear_Svc_loaded.predict(X_new)
+    return ynew
+def Kneighbors_model(path,filename):
+    data= pd.read_csv(path)
+    df = pd.DataFrame(data)
+    X=[]
+    R=list(df.iloc[:,0])
+    IM=list(df.iloc[:,1])
+    imean = sum(R)/len(R)
+    qmean = sum(IM)/len(IM)
+    X.append(imean)  
+    X.append(qmean)
+    istd = np.std(R)
+    qstd = np.std(IM)
+    X.append(istd)
+    X.append(qstd)
+    imad=np.mean(np.absolute(R - np.mean(R))) 
+    qmad=np.mean(np.absolute(IM - np.mean(IM)))
+    X.append(imad)
+    X.append(qmad)
+    sr = pd.Series(R)
+    sr1 = pd.Series(IM)
+    ikurt = sr.kurtosis() 
+    qkurt = sr.kurtosis()
+    X.append(ikurt)
+    X.append(qkurt)
+    X_new = np.asarray(X,dtype=float).reshape(1,8)  
+    with open(r'/home/oussama/Bureau/znaydi/drone detection/Models/Kneighbors.pkl', 'rb') as open_file:
+    	Neigh_loaded = pickle.load(open_file)
+    ynew = Neigh_loaded.predict(X_new)
+    return ynew
